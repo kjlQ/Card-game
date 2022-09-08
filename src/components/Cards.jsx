@@ -1,9 +1,12 @@
 import React from 'react';
+import Card from "./Card";
 
 const Cards = () => {
     return (
-        <div>
-            123
+        <div className="cards">
+            <div className="cards-container">
+                {[...new Array(12)].map(item=><Card />)}
+            </div>
         </div>
     );
 };
