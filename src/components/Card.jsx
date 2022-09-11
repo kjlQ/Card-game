@@ -1,22 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import backCard from '../images/backcard.png';
 
-const Card = ({item,setEqual,matched,equal}) => {
-    const [flipped,setFlipped] = useState(false)
-    const imgSrc = require(`../images/${item}-1.png`)
-    const handleClick = () => {
-        setFlipped(true)
-        setEqual(prev=>[...prev,item])
-    }
-    useEffect(()=> {
-        if(equal[1] && !matched.includes(item)) {
-            setFlipped(false)
-            console.log(item)
-        }
-    },[equal])
+const Card = ({name,id,flipped,matched,handleClick}) => {
+    const imgSrc = require(`../images/${name}-1.png`)
+
     return (
         <div className={`card ${flipped && 'flipped'}`}>
-            <div className="card__face card__face--front" onClick={()=>handleClick()}>
+            <div className="card__face card__face--front" onClick={()=>handleClick(id)}>
                 <img src={backCard} alt=""/>
             </div>
             <div className={`card__face card__face--back`}>
