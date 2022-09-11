@@ -3,6 +3,8 @@
   background: linear-gradient(149deg, rgba(172, 36, 36, 1) 0%, rgba(203, 72, 72, 1) 28%, rgba(235, 189, 115, 1) 100%
   );
   min-height: 100vh;
+  align-items: center;
+  display: flex;
   &-container {
     width: 500px;
     margin: auto;
