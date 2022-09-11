@@ -9,8 +9,11 @@ const Card = ({item,setEqual,matched,equal}) => {
         setEqual(prev=>[...prev,item])
     }
     useEffect(()=> {
-        equal[1] && matched.map(match=>match!==item && setFlipped(false))
-    },[matched,equal])
+        if(equal[1] && !matched.includes(item)) {
+            setFlipped(false)
+            console.log(item)
+        }
+    },[equal])
     return (
         <div className={`card ${flipped && 'flipped'}`}>
             <div className="card__face card__face--front" onClick={()=>handleClick()}>

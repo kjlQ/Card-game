@@ -19,18 +19,17 @@ const Cards = () => {
     const [matched , setMatched] = useState([])
     const [equal , setEqual] = useState([])
     useEffect(()=> {
-        setTimeout(()=> {
-            if(equal[0] && equal[0] === equal[1]) {
-                setMatched([...matched,equal[0]])
-            }
-            if(equal.length>1) {
-                setEqual([])
-            }
-        },200)
+        if(equal[0] && equal[0] === equal[1]) {
+            setMatched([...matched,equal[0]])
+        }
+        if(equal[1]) {
+            setEqual([])
+        }
+        console.log('matched=>',matched)
+        console.log('equal=>',equal)
     },[equal])
 
-    console.log('matched=>',matched)
-    console.log('equal=>',equal)
+
 
     return (
         <div className="cards">
